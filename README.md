@@ -4,7 +4,7 @@ Tooltipster
 A jQuery tooltip plugin by Caleb Jacob under MIT license.  
 Compatible with Mozilla Firefox, Google Chrome, IE8+ and others. Requires jQuery 1.7+
 
-A reminder of options/methods lies below. For detailed documentation, visit http://iamceege.github.io/tooltipster/
+A reminder of options/methods lies below. For detailed documentation, visit http://mikuscallion.github.io/tooltipster_cn/
 
 Options
 -------------------------
