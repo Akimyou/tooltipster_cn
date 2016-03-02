@@ -1,4 +1,4 @@
-$(function() {
+﻿$(function() {
 	
 	$('.tooltip').not('#welcome .tooltip').tooltipster({
 		offsetY: 2,
@@ -11,7 +11,7 @@ $(function() {
 		offsetY: 2
 	});
 	$('#demo-html').tooltipster({
-		content: $('<img src="doc/images/spiderman.png" width="50" height="50" /><p style="text-align:left;"><strong>Soufflé chocolate cake powder.</strong> Applicake lollipop oat cake gingerbread.</p>'),
+		content: $('<img src="doc/images/spiderman.png" width="50" height="50" /><p style="text-align:left;"><strong>Soufflé 巧克力蛋糕粉。</strong> Applicake lollipop oat cake gingerbread.</p>'),
 		// setting a same value to minWidth and maxWidth will result in a fixed width
 		minWidth: 300,
 		maxWidth: 300,
@@ -22,7 +22,7 @@ $(function() {
 		theme: 'tooltipster-pink'
 	});
 	$('#demo-callback').tooltipster({
-		content: 'Loading...',
+		content: '加载中...',
 		updateAnimation: false,
 		functionBefore: function(origin, continueTooltip) {
 			continueTooltip();
@@ -48,7 +48,7 @@ $(function() {
 			}
 		},
 		functionAfter: function(origin) {
-			alert('The tooltip has closed!');
+			alert('工具提示已关闭！');
 		}
 	});
 	$('#demo-events').tooltipster({
@@ -70,19 +70,19 @@ $(function() {
 	});
 	$('#demo-multiple').tooltipster({
 		animation: 'swing',
-		content: 'North',
+		content: '北',
 		multiple: true,
 		position: 'top'
 	});
 	$('#demo-multiple').tooltipster({
-		content: 'East',
+		content: '东',
 		multiple: true,
 		position: 'right',
 		theme: 'tooltipster-punk'
 	});	
 	$('#demo-multiple').tooltipster({
 		animation: 'grow',
-		content: 'South',
+		content: '南',
 		delay: 200,
 		multiple: true,
 		position: 'bottom',
@@ -90,7 +90,7 @@ $(function() {
 	});	
 	$('#demo-multiple').tooltipster({
 		animation: 'fall',
-		content: 'West',
+		content: '西',
 		multiple: true,
 		position: 'left',
 		theme: 'tooltipster-shadow'
