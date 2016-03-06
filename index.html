@@ -139,8 +139,8 @@
 		
 		<section id="getting-started">
 			<h2>入门</h2>
-			<h3>1. Load jQuery and include Tooltipster's plugin files</h3>
-			<p>After you <a href="https://github.com/iamceege/tooltipster/archive/master.zip">download Tooltipster</a>, move tooltipster.css and jquery.tooltipster.min.js to your root's CSS and JavaScript directories. Next, load jQuery and include Tooltipster's CSS and JavaScript files inside of your  tags:</p>
+			<h3>1. 加载jQuery并且包含Tooltipster的插件文件</h3>
+			<p>当你<a href="https://github.com/iamceege/tooltipster/archive/master.zip">下载Tooltipster</a>之后, 把tooltipster.css和 jquery.tooltipster.min.js移动到你的CSS根目录和JavaScript的目录。接下来，加载jQuery并且包含Tooltipster的CSS和JavaScript文件在相应的标签里面：</p>
 <pre class="prettyprint">
 &lt;head&#62;
 ...
@@ -153,22 +153,22 @@
 ...
 &lt;/head&#62;
 </pre>
-			<h3>2. Set up your HTML</h3>
-			<p>In order for Tooltipster to work, we first need to add the <strong>.tooltip</strong> class (or whatever class / means of selection you'd like to use) to whatever element we wish to have a tooltip. Next, we'll set the <strong>title attribute</strong> to whatever we'd like our tooltip to say. Here are a few examples:</p>
-			<h4>Adding a tooltip to an image:</h4>
+			<h3>2. 建立你的HTML结构</h3>
+			<p>为了让Tooltipster工作，我们首先需要添加<strong>.tooltip</strong>类（或其他任意类/选择你想使用的方法）到我们希望有tooltip（气泡悬浮框）的任意元素中。接下来，我们将设置<strong>（标签）属性</strong>来表达我们希望tooltip显示的内容。以下是一些例子：</p>
+			<h4>为一张图片添加一个tooltip（气泡悬浮框）：</h4>
 			<pre class="prettyprint">
 &lt;img src="my-image.png" class="tooltip" title="This is my image's tooltip message!" /&#62;</pre>
-			<h4>Adding a tooltip to a link that already has a class:</h4>
+			<h4>为已经有样式类的链接添加一个tooltip（气泡悬浮框）：</h4>
 			<pre class="prettyprint">
 &lt;a href="http://calebjacob.com" class="ketchup tooltip" title="This is my link's tooltip message!"&#62;Link&lt;/a&#62;</pre>
-			<h4>Adding a tooltip to a div:</h4>
+			<h4>为一个div添加一个tooltip（气泡悬浮框）：</h4>
 			<pre class="prettyprint">
 &lt;div class="tooltip" title="This is my div's tooltip message!"&#62; 
     This div has a tooltip when you hover over it!
 &lt;/div&#62;</pre>
 			
-			<h3>3. Activate Tooltipster</h3>
-			<p>The last thing we have to do is activate the plugin. To do this, add the following script right before your closing &lt;/head&#62; tag (using whatever selector you'd like - in this case we're using the <strong>.tooltip</strong> class):</p>
+			<h3>3. 激活Tooltipster</h3>
+			<p>T我们要做的最后一件事情是激活这个插件。为此，需正确添加以下脚本在&lt;/head&#62;标签结束前（使用你想要的任何选择器——在本例中，我们选中<strong>.tooltip</strong>类）：</p>
 			<pre class="prettyprint">
 &lt;head&#62;
 
@@ -181,9 +181,9 @@
     &lt;/script&#62;
 &lt;/head&#62;</pre>
 			
-			<h3><a name="further">4. Taking It a Step Further</a></h3>
-			<h4>Using HTML tags inside your tooltips</h4>
-			<p>Tooltipster allows you to use any HTML markup you can think of inside your tooltips. This means you can insert things like images and text formatting tags. To achieve this, the recommended method is a little different : provide your content as a jQuery object in the script rather than in the title attribute :</p>
+			<h3><a name="further">4. 更进一步</a></h3>
+			<h4>在你的tooltip（气泡悬浮框）中使用HTML</h4>
+			<p>Tooltipster允许你在tooltip（气泡悬浮框）中使用任何你能想到的HTML标记，这意味着说你可以插入图像和文本标签。为了达到这个目的，推荐的方法有点不同：将你的内容作为一个jQuery对象在脚本中而不是title（标签）的属性:</p>
 			<pre class="prettyprint">
 &lt;head&#62;
 
@@ -205,7 +205,7 @@
 	
 &lt;/body&#62;</pre>
 
-			<p>Another (less recommended) way of achieving this is to put encoded HTML markup directly in your title attribute and set the 'contentAsHTML' option to 'true'. In all cases, make sure you have tight control over the content you wish to display in the tooltip, as unwanted &lt;script&gt; or &lt;iframe&gt; tags for example would be a serious security issue for your website.</p>
+			<p>另外一种（不太推荐）实现这个目的的方法是直接将编码好的HTML标记放到你的title（标签）属性并将‘content As HTML’的选项设置为‘true’。在任何情况下，确保你有严格控制你希望展示在tooltip（气泡悬浮框）上的内容，比如不必要的&lt;script&gt;或者&lt;iframe&gt; 标记可能会给你的网站带来一个严重的安全问题。</p>
 
 			<pre class="prettyprint">
 &lt;head&#62;
@@ -228,14 +228,14 @@
 	
 &lt;/body&#62;</pre>
 			
-			<h4>Customizing Your Tooltipster's Style</h4>
-			<p>The style of your Tooltipsters can be easily changed by editing/overriding the default Tooltipster theme, located in the <strong>css/tooltipster.css</strong> file.</p>
-			<p>Tooltipster is also packaged with 4 alternative themes to choose from. They are demonstrated at the bottom of this page. To use a theme, just include its css file (located in the css/themes folder) in your page and specify its name in Tooltipster's settings :</p>
+			<h4>定制你的Tooltipster的样式</h4>
+			<p>你可以轻松的改变Tooltipsters的样式，通过编辑或是重写<strong>css/tooltipster.css</strong>文件。</p>
+			<p>Tooltipster有4个打包好的的主题可供选择。它们在本页的底部有演示。若要使用一个主题，只要包含它的css文件（位于 css/themes文件夹）在你的页面并在Tooltipster的设置中指定它的名字：</p>
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
     theme: 'tooltipster-noir'
 });</pre>
-			<p>And of course, you also have the option to create a brand new theme to suit your needs. To do this, start with the example below and add your flair. When you are done, include and specify your theme just like you would for one of Tooltipster's existing themes.</p>
+			<p>当然，你也可以选择创建一个全新的主题来满足你的需求。为做到这一点，从下面的例子开始并且加入你的想法。当你完成之后，包含并指定你的主题就像使用Tooltipster现有的主题一样。</p>
 			<pre class="prettyprint lang-css">
 /* This is how you would create a theme called "my-custom-theme": */
 
@@ -253,8 +253,8 @@ $('.tooltip').tooltipster({
 	padding: 8px 10px;
 }</pre>
 			
-			<h4>Customizing Tooltipster's Functionality</h4>
-			<p>Tooltipster's options gives you a wide range of variables to tweak your tooltip to your heart's content. To learn more about all of the options, <a href="#options">read the Options section</a>. Here's just a few of the things you can play with:</p>
+			<h4>定制Tooltipster的功能</h4>
+			<p>Tooltipster的选项为你提供了广泛的变量值，使你的tooltip（气泡悬浮框）达到你心仪的效果。想要了解更多的选项，请<a href="#options">阅读选项部分。</a>这边只是一点东西仅供参考：</p>
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
    animation: 'fade',
