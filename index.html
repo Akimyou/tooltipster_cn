@@ -17,7 +17,7 @@
 	<meta itemprop="image" content="images/social.jpg">
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="image_src" href="images/social.jpg" / >
-	
+
 	<link rel="stylesheet" type="text/css" href="doc/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="doc/css/prettify.css" />
 	<link rel="stylesheet" type="text/css" href="doc/css/style.css" />
@@ -26,14 +26,14 @@
 	<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-noir.css" />
 	<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-punk.css" />
 	<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-shadow.css" />
-	
+
 	<script type="text/javascript" src="//ajax.useso.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	<script type="text/javascript" src="doc/js/jquery.jgfeed.js"></script>
 	<script type="text/javascript" src="doc/js/prettify.js"></script>
 	<script type="text/javascript" src="doc/js/lang-css.js"></script>
 	<script type="text/javascript" src="doc/js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery.tooltipster.js"></script>
-	
+
 	<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -102,7 +102,7 @@
 				<a href="https://github.com/iamceege/tooltipster/archive/master.zip" class="button alt">下载</a> <span style="padding-right: 0.5em;">&amp;</span> <a href="#demos" class="white">开始学习 &rsaquo;</a>
 			</div>
 		</section>
-		
+
 		<section id="demos">
 			<h2>示例</h2>
 			<ul>
@@ -136,11 +136,11 @@
 				<li>…… 不止这些，还有其他样式！</li>
 			</ul>
 		</section>
-		
+
 		<section id="getting-started">
 			<h2>入门</h2>
 			<h3>1. 加载jQuery并且包含Tooltipster的插件文件</h3>
-			<p>当你<a href="https://github.com/iamceege/tooltipster/archive/master.zip">下载Tooltipster</a>之后, 把tooltipster.css和 jquery.tooltipster.min.js移动到你的CSS根目录和JavaScript的目录。接下来，加载jQuery并且包含Tooltipster的CSS和JavaScript文件在相应的标签里面：</p>
+			<p>当你<a href="https://github.com/iamceege/tooltipster/archive/master.zip">下载Tooltipster</a>之后, 把tooltipster.css和 jquery.tooltipster.min.js移动到你根目录（项目目录）下的CSS目录和JavaScript的目录。接下来，加载jQuery并且包含Tooltipster的CSS和JavaScript文件在相应的标签里面：</p>
 <pre class="prettyprint">
 &lt;head&#62;
 ...
@@ -154,7 +154,7 @@
 &lt;/head&#62;
 </pre>
 			<h3>2. 建立你的HTML结构</h3>
-			<p>为了让Tooltipster工作，我们首先需要添加<strong>.tooltip</strong>类（或其他任意类/选择你想使用的方法）到我们希望有tooltip（气泡悬浮框）的任意元素中。接下来，我们将设置<strong>（标签）属性</strong>来表达我们希望tooltip显示的内容。以下是一些例子：</p>
+			<p>为了让Tooltipster工作，我们首先为需要显示tooltip的标签添加<strong>.tooltip</strong>类（也可以是其他类名或者其他可以用来选择元素的方法）。接下来，我们通过（标签的）<strong>title</strong>属性来设置tooltip的内容。以下是一些例子：</p>
 			<h4>为一张图片添加一个tooltip（气泡悬浮框）：</h4>
 			<pre class="prettyprint">
 &lt;img src="my-image.png" class="tooltip" title="This is my image's tooltip message!" /&#62;</pre>
@@ -163,12 +163,12 @@
 &lt;a href="http://calebjacob.com" class="ketchup tooltip" title="This is my link's tooltip message!"&#62;Link&lt;/a&#62;</pre>
 			<h4>为一个div添加一个tooltip（气泡悬浮框）：</h4>
 			<pre class="prettyprint">
-&lt;div class="tooltip" title="This is my div's tooltip message!"&#62; 
+&lt;div class="tooltip" title="This is my div's tooltip message!"&#62;
     This div has a tooltip when you hover over it!
 &lt;/div&#62;</pre>
-			
+
 			<h3>3. 激活Tooltipster</h3>
-			<p>T我们要做的最后一件事情是激活这个插件。为此，需正确添加以下脚本在&lt;/head&#62;标签结束前（使用你想要的任何选择器——在本例中，我们选中<strong>.tooltip</strong>类）：</p>
+			<p>我们要做的最后一件事情是激活这个插件。为此，需将以下脚本添加到闭合标签&lt;/head&#62;前（你可以使用任何你想要的选择器——在本例中，我们使用<strong>.tooltip</strong>类）：</p>
 			<pre class="prettyprint">
 &lt;head&#62;
 
@@ -180,10 +180,10 @@
         });
     &lt;/script&#62;
 &lt;/head&#62;</pre>
-			
+
 			<h3><a name="further">4. 更进一步</a></h3>
 			<h4>在你的tooltip（气泡悬浮框）中使用HTML</h4>
-			<p>Tooltipster允许你在tooltip（气泡悬浮框）中使用任何你能想到的HTML标记，这意味着说你可以插入图像和文本标签。为了达到这个目的，推荐的方法有点不同：将你的内容作为一个jQuery对象在脚本中而不是title（标签）的属性:</p>
+			<p>Tooltipster允许你在tooltip（气泡悬浮框）中使用任何你能想到的HTML标记，这意味着说你可以插入图像和格式化文本标签。为了达到这个目的，推荐的方法（与上面的）有点不同：在脚本中通过jQuery对象来定义你的内容而不是（标签的）title属性:</p>
 			<pre class="prettyprint">
 &lt;head&#62;
 
@@ -198,14 +198,14 @@
     &lt;/script&#62;
 &lt;/head&#62;
 &lt;body&#62;
-    
-    &lt;div id="my-tooltip"&#62; 
+
+    &lt;div id="my-tooltip"&#62;
         This div has a tooltip with HTML when you hover over it!
     &lt;/div&#62;
-	
+
 &lt;/body&#62;</pre>
 
-			<p>另外一种（不太推荐）实现这个目的的方法是直接将编码好的HTML标记放到你的title（标签）属性并将‘content As HTML’的选项设置为‘true’。在任何情况下，确保你有严格控制你希望展示在tooltip（气泡悬浮框）上的内容，比如不必要的&lt;script&gt;或者&lt;iframe&gt; 标记可能会给你的网站带来一个严重的安全问题。</p>
+			<p>另外一种（不太推荐）实现这个目的的方法是直接将编码好的HTML标记放到你的（标签的）title属性并将‘content As HTML’的选项设置为‘true’。在任何情况下，确保你对希望展示在tooltip（气泡悬浮框）上的内容有严格控制，比如不必要的&lt;script&gt;或者&lt;iframe&gt; 标记可能会给你的网站带来一个严重的安全问题。</p>
 
 			<pre class="prettyprint">
 &lt;head&#62;
@@ -221,16 +221,16 @@
     &lt;/script&#62;
 &lt;/head&#62;
 &lt;body&#62;
-    
-    &lt;div class="tooltip" title="&amp;lt;img src=&amp;quot;my-image.png&amp;quot; /&amp;gt; &amp;lt;strong&amp;gt; This text is in bold case !&amp;lt;/strong&amp;gt;"&gt; 
+
+    &lt;div class="tooltip" title="&amp;lt;img src=&amp;quot;my-image.png&amp;quot; /&amp;gt; &amp;lt;strong&amp;gt; This text is in bold case !&amp;lt;/strong&amp;gt;"&gt;
         This div has a tooltip with HTML when you hover over it!
     &lt;/div&#62;
-	
+
 &lt;/body&#62;</pre>
-			
+
 			<h4>定制你的Tooltipster的样式</h4>
-			<p>你可以轻松的改变Tooltipsters的样式，通过编辑或是重写<strong>css/tooltipster.css</strong>文件。</p>
-			<p>Tooltipster有4个打包好的的主题可供选择。它们在本页的底部有演示。若要使用一个主题，只要包含它的css文件（位于 css/themes文件夹）在你的页面并在Tooltipster的设置中指定它的名字：</p>
+			<p>通过编辑或是重写<strong>css/tooltipster.css</strong>文件，你可以轻松的改变Tooltipsters的样式。</p>
+			<p>Tooltipster有4个打包好的的主题可供选择。它们在本页的底部有演示。若要使用一个主题，只要在你的页面中引入对应的css文件（位于 css/themes文件夹）并在Tooltipster的设置中指定它的名字：</p>
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
     theme: 'tooltipster-noir'
@@ -240,7 +240,7 @@ $('.tooltip').tooltipster({
 /* This is how you would create a theme called "my-custom-theme": */
 
 .my-custom-theme {
-	border-radius: 5px; 
+	border-radius: 5px;
 	border: 2px solid #000;
 	background: #4c4c4c;
 	color: #fff;
@@ -252,7 +252,7 @@ $('.tooltip').tooltipster({
 	line-height: 16px;
 	padding: 8px 10px;
 }</pre>
-			
+
 			<h4>定制Tooltipster的功能</h4>
 			<p>Tooltipster的选项为你提供了广泛的变量值，使你的tooltip（气泡悬浮框）达到你心仪的效果。想要了解更多的选项，请<a href="#options">阅读选项部分。</a>这边只是一点东西仅供参考：</p>
 			<pre class="prettyprint">
@@ -264,24 +264,24 @@ $('.tooltip').tooltipster({
    trigger: 'hover'
 });</pre>
 		</section>
-		
+
 		<section id="options">
 			<h2>选项</h2>
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tr>
 					<td><h4>animation</h4></td>
 					<td>fade, grow, swing, slide, fall</td>
-					<td>决定如何将tooltip动态地载入和输出。在tooltipster.css文件上随意修改或创建自定义转换。在IE9和IE8中，所有的animations默认生成JavaScript，淡出animation。<strong>Default: 'fade'</strong></td>
+					<td>决定tooltip将如何动态地显示和隐藏。你可以随意地在tooltipster.css文件上修改或创建自定义转换效果。在IE9和IE8中，所有的动画效果（animation）将(退化)默认为由使用Javascript实现的渐隐（fade）效果<strong>Default: 'fade'</strong></td>
 				</tr>
 				<tr>
 					<td><h4>arrow</h4></td>
 					<td>boolean</td>
-					<td>为tooltip增加了“语音泡沫箭头”。<strong>Default: true</strong></td>
+					<td>为tooltip增加了“聊天气泡箭头”。<strong>Default: true</strong></td>
 				</tr>
 				<tr>
 					<td><h4>arrowColor</h4></td>
 					<td>hex code / rgb</td>
-					<td>为“语音泡沫箭头”选择一个特定的颜色。<strong>Default: 将继承tooltip的背景颜色。</strong></td>
+					<td>为“聊天气泡箭头”选择一个特定的颜色。<strong>Default: 将继承tooltip的背景颜色。</strong></td>
 				</tr>
 				<tr>
 					<td><h4>autoClose</h4></td>
@@ -296,17 +296,17 @@ $('.tooltip').tooltipster({
 				<tr>
 					<td><h4>contentAsHTML</h4></td>
 					<td>boolean</td>
-					<td>如果tooltip的content选项是以字符串形式提供的，它会显示为默认的纯文本。当这个content解释为HTML形式时，设置这个选项为真。<strong>Default: false</strong></td>
+					<td>如果tooltip的内容（content）是以字符串形式提供的，它会默认显示为纯文本。当这个内容（content）需要作为HTML解析时，设置这个选项为true。<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>contentCloning</h4></td>
 					<td>boolean</td>
-					<td>如果你为“content”选项提供一个jQuery对象，而contentCloning选项设置为该对象的一个克隆者，则该对象实际上应该被使用。<strong>Default: true</strong></td>
+					<td>如果你为内容（content）选项提供一个jQuery对象，contentCloning选项决定了tooltip具体使用该对象的拷贝还是对象本身，来作为content的值。<strong>Default: true</strong></td>
 				</tr>
 				<tr>
 					<td><h4>debug</h4></td>
 					<td>boolean</td>
-					<td>当你犯了某些错误时，Tooltipster日志将会通知控制台。设置为假以禁用日志记录。 <strong>Default: true</strong></td>
+					<td>当你犯了某些错误时，Tooltipster日志将会通知控制台。设置为false以禁用日志记录。 <strong>Default: true</strong></td>
 				</tr>
 				<tr>
 					<td><h4>delay</h4></td>
@@ -346,7 +346,7 @@ $('.tooltip').tooltipster({
 				<tr>
 					<td><h4>hideOnClick</h4></td>
 					<td>boolean</td>
-					<td>当值为true时,如果单击origin，tooltip将关闭。此选项仅适用于“触发”为“悬停”和“autoClose”值为false时。<strong>Default: false</strong></td>
+					<td>当值为true时,如果单击初始对象（origin），tooltip将关闭。此选项仅适用于“触发条件（trigger）”为“悬停（hover）”而且“自动关闭（autoClose）”值为false时。<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>icon</h4></td>
@@ -361,47 +361,47 @@ $('.tooltip').tooltipster({
 				<tr>
 					<td><h4>iconDesktop</h4></td>
 					<td>boolean</td>
-					<td>在content旁边生成一个icon来负责激活非触摸设备上的tooltip。 <strong>Default: false</strong></td>
+					<td>在非触摸设备上，在内容旁边生成一个用以激活tooltip的icon<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>iconTheme</h4></td>
 					<td>CSS class</td>
-					<td>当使用iconDesktop或iconTouch选项时,用来设置icon类(用于icon样式)。 <strong>Default: 'tooltipster-icon'</strong></td>
+					<td>当使用iconDesktop或iconTouch选项时,用来设置icon类(用于定制icon样式)。 <strong>Default: 'tooltipster-icon'</strong></td>
 				</tr>
 				<tr>
 					<td><h4>iconTouch</h4></td>
 					<td>boolean</td>
-					<td>在靠近你的内容出生成一个图标，对于在触屏设备上激活tooltip是有效的。比如平板电脑、手机等。<strong>Default: false</strong></td>
+					<td>在触摸设备（比如平板电脑、手机等）上，在内容旁边生成一个用以激活tooltip的icon<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>interactive</h4></td>
 					<td>boolean</td>
-					<td>让用户尽可能使用tooltip,除非自动关闭被设置成false,如果用户抛弃或者单击tooltip,那么也会关闭。<strong>Default: false</strong></td>
+					<td>使得用户与tooltip之间可以进行交互。除非将自动关闭设置成false，否则当用户移开或点击tooltip外的区域时，tooltip依然会关闭。<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>interactiveTolerance</h4></td>
 					<td>integer</td>
-					<td>如果tooltip是交互式的和被一个徘徊事件激活，在tooltip本身设置几毫秒的时间让用户在tooltip激活剂上徘徊考虑。<strong>Default: 350</strong></td>
+					<td>如果tooltip是交互式的并且被一个悬停事件激活，设置tooltip的悬停激活时间（ms）。<strong>Default: 350</strong></td>
 				</tr>
 				<tr>
 					<td><h4>multiple</h4></td>
 					<td>boolean</td>
-					<td>允许你将多个tooltip放在当个元素上。从头到尾细读这页的文档说明。<strong>Default: false</strong></td>
+					<td>允许你将多个tooltip放在当个元素上。进一步说明请查看下文。<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>offsetX</h4></td>
 					<td>integer</td>
-					<td>从原点将tooltip向左或向右偏移（以像素为单位）。<strong>Default: 0</strong></td>
+					<td>tooltip从原始位置向左或向右偏移（以像素为单位）。<strong>Default: 0</strong></td>
 				</tr>
 				<tr>
 					<td><h4>offsetY</h4></td>
 					<td>integer</td>
-					<td>从原点将tooltip向上或向下偏移（以像素为单位）。<strong>Default: 0</strong></td>
+					<td>tooltip从原始位置向上或向下偏移（以像素为单位）。<strong>Default: 0</strong></td>
 				</tr>
 				<tr>
 					<td><h4>onlyOne</h4></td>
 					<td>boolean</td>
-					<td>如果为真，唯一的tooltip将允许被激活一次。然而非自动关闭tooltip将不会被关闭。<strong>Default: false</strong></td>
+					<td>如果为真，一次只能有一个tooltip被激活。然而非自动关闭的tooltip将不会被关闭。<strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>position</h4></td>
@@ -411,12 +411,12 @@ $('.tooltip').tooltipster({
 				<tr>
 					<td><h4>positionTracker</h4></td>
 					<td>boolean</td>
-					<td>如果原点移动了，那么就会改变tooltip的位置。 As this option may have an impact on performance, we suggest you enable it only if you need to. <strong>Default: false</strong></td>
+					<td>当原始对象移动时重新调整tooltip的位置(tooltip打开的状态下)。这个选项会影响到性能表现，我们建议你仅在需要的时候开启。 <strong>Default: false</strong></td>
 				</tr>
 				<tr>
 					<td><h4>positionTrackerCallback</h4></td>
 					<td>function</td>
-					<td>在定位器将悬浮窗重定位后调用。默认：如果鼠标悬停指示器和autoclose设为false，该方法将关闭悬浮窗。</td>
+					<td>在定位跟踪重新将tooltip重定位后调用。默认：tooltip的激活方式为悬停(hover)和自动关闭（autoClose）为false时默认为关闭tooltip</td>
 				</tr>
 				<tr>
 					<td><h4>restoration</h4></td>
@@ -431,7 +431,7 @@ $('.tooltip').tooltipster({
 				<tr>
 					<td><h4>timer</h4></td>
 					<td>integer</td>
-					<td>关闭前悬浮窗可存在的时间。<strong>Default: 0 (disabled)</strong></td>
+					<td>关闭前悬浮窗可存在的时间。（tooltip自动关闭的时间）<strong>Default: 0 (disabled)</strong></td>
 				</tr>
 				<tr>
 					<td><h4>theme</h4></td>
@@ -441,7 +441,7 @@ $('.tooltip').tooltipster({
 				<tr>
 					<td><h4>touchDevices</h4></td>
 					<td>boolean</td>
-					<td>如果设为false，悬浮窗不会在触屏设备上显示，除非你自己利用“method”方法打开。设备上的触摸手势仍可打开悬浮窗。<strong>Default: true</strong></td>
+					<td>如果设为false，悬浮窗不会在触屏设备上显示，除非你自己利用“show”方法打开。设备上带有鼠标指针的触摸手势仍可打开悬浮窗。<strong>Default: true</strong></td>
 				</tr>
 				<tr>
 					<td><h4>trigger</h4></td>
@@ -455,10 +455,10 @@ $('.tooltip').tooltipster({
 				</tr>
 			</table>
 		</section>
-		
+
 		<section id="advanced">
 			<h2>高级用法</h2>
-			
+
 			<a name="api"></a>
 			<h3>The awesomesauce Tooltipster API</h3>
 			<p>The Tooltipster API was created to be as flexible and easy to use as possible (thanks to <a href="https://github.com/glebtv">glebtv</a> for the inspiration). The API allows you to create custom triggers, update tooltip content on the fly (whether the tooltip is currently open or not), destroy Tooltipster functionality if needed, and reposition tooltips for unique use cases.</p>
@@ -504,7 +504,7 @@ $(...).tooltipster('elementTooltip');
 
 // return the HTML root element of the icon if there is one, 'undefined' otherwise
 $(...).tooltipster('elementIcon');</pre>
-			
+
 			<a name="ajax"></a>
 			<h3>Using AJAX to generate your tooltip content</h3>
 			<p>Tooltipster gives you the ability to fire a custom synchronous or asynchronous function everytime before the tooltip launches (<a href="#functionBeforeExample">functionBefore</a>) or just once upon instantiation (<a href="#functionInitExample">functionInit</a>). One great use for this is to grab dynamic content for your tooltips via AJAX.</p>
@@ -516,7 +516,7 @@ $('.tooltip').tooltipster({
 
         // we'll make this function asynchronous and allow the tooltip to go ahead and show the loading notification while fetching our data
         continueTooltip();
-        
+
         // next, we want to check if our data has already been cached
         if (origin.data('ajax') !== 'cached') {
             $.ajax({
@@ -534,9 +534,9 @@ $('.tooltip').tooltipster({
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
     functionInit: function(origin, content) {
-		
+
         if (content === 'This is bad content') {
-            
+
             // when the request has finished loading, we will change the tooltip's content
             $.ajax({
                 type: 'POST',
@@ -545,7 +545,7 @@ $('.tooltip').tooltipster({
                     origin.tooltipster('content', 'New content has been loaded : ' + data);
                 }
             });
-			
+
             // this returned string will overwrite the content of the tooltip for the time being
             return 'Wait while we load new content...';
         }
@@ -554,7 +554,7 @@ $('.tooltip').tooltipster({
         }
     }
 });</pre>
-			
+
 			<a name="apishow"></a>
 			<h3>Manually show and hide a tooltip</h3>
 			<p>By default and according to the 'trigger' option, Tooltipster automatically shows tooltips upon users' mouse clicks or mouse hovering (or their touch-gesture equivalents). In addition to this, you may also manually open or close a tooltip at anytime with a simple javascript command.</p>
@@ -565,13 +565,13 @@ $('.tooltip').tooltipster({
 </pre>
 			<pre class="prettyprint">
 $(document).ready(function() {
-   
+
    // first on page load, initiate the Tooltipster plugin
    $('.tooltip').tooltipster();
-   
+
    // then immediately show the tooltip
    $('#example').tooltipster('show');
-   
+
    // as soon as a key is pressed on the keyboard, hide the tooltip.
    $(window).keypress(function() {
       $('#example').tooltipster('hide');
@@ -581,13 +581,13 @@ $(document).ready(function() {
 			<p>You may also provide a function as the callback parameter of the show/hide methods. The callback functions are called in the context of the tooltipstered element. If the tooltip is already in the state you are asking for (open/closed), the callback is executed immediately. Please note that if the show/hide action is somehow cancelled before it has completed its animation, the callback function will never be called.</p>
 			<pre class="prettyprint">
 $(document).ready(function() {
-   
+
    $('.tooltip').tooltipster();
-   
+
    $('#example').tooltipster('show', function() {
        alert('The tooltip is now fully open. The content is: ' + this.tooltipster('content'));
    });
-   
+
    $(window).keypress(function() {
       $('#example').tooltipster('hide', function() {
          alert('The tooltip is now fully closed');
@@ -595,20 +595,20 @@ $(document).ready(function() {
    });
 });
 </pre>
-			
+
 			<a name="apicontent"></a>
 			<h3>Updating a tooltip's content</h3>
 			<p>It's easy as pie to update a tooltip's content - whether it's open or closed. Depending on your selector, you can update multiple tooltips at once or just one:</p>
 			<pre class="prettyprint">
 $('#my-special-element').tooltipster('content', 'My new content');</pre>
 			<p>By default, Tooltipster will play a subtle animation when the content changes. To tweak the animation, check out the '.tooltipster-content-changing' class in your tooltipster.css file. It's important to note that only CSS transforms will be animated. To disable this animation, set updateAnimation to false.</p>
-			
+
 			<a name="multiple"></a>
 			<h3>Using several tooltips on a single element</h3>
 			<p>Several independant tooltips can be set on a single element, each one having its own triggers and options. Just set the 'multiple' option to true when you initialize your tooltip. This will only change two things that you might want to be aware of.</p>
 			<p>Firstly, the instantiation call will now return an array of Tooltipster objects generated by the call, instead of the tooltipped jQuery-wrapped elements.</p>
 			<p>Secondly, you will have to use the Tooltipster object of a tooltip to make any API method calls on it. All methods documented on this page remain available, only the way to call them changes.</p>
-			
+
 			<pre class="prettyprint">
 // create a first tooltip as usual. The multiple option is actually optional for the first tooltip
 $('#my-element').tooltipster({
@@ -649,7 +649,7 @@ var tooltip1 = tooltipsterObjects[0];
 tooltip1.content('New content for my first tooltip').show();</pre>
 
 <p>Note : if you have multiple tooltips and destroy them, only the last destroyed tooltip will transfer its content back to the title attribute of the tooltipped element.</p>
-	
+
 			<a name="accessibility"></a>
 			<h3>Make tooltips accessible to persons with disabilities</h3>
 			<p>The W3C issued a recommendation to make websites more accessible to persons with disabilities. This recommendation is known as WAI-ARIA (or simply ARIA), which stands for Web Accessibility Initiative - Accessible Rich Internet Applications.</p>
@@ -691,12 +691,12 @@ $('#myfield')
         $(this).tooltipster('hide');
     });
 </pre>
-			
+
 			<h3>Community submitted use cases</h3>
 			<p><a href="http://stackoverflow.com/questions/14741688/how-to-display-messages-from-jquery-validate-plugin-inside-of-tooltipster-toolti">Using Tooltipster alongside jQuery Validate</a> by <a href="https://github.com/sparky672">sparky672</a></p>
 			<p>Did you do something awesome with Tooltipster? <a href="#talk">Tell me</a> and I'll post it up here!</p>
 		</section>
-		
+
 		<section id="themes">
 			<h2>主题</h2>
 			<p>Tired of the same old? Four other rocking themes are available for your tooltips, and you can always create yours ! Share them with us on GitHub !</p>
@@ -708,19 +708,19 @@ $('#myfield')
 				<span class="tooltipster-shadow-preview" title="Check out my shadow" target="_blank">Shadow</span>
 			</div>
 		</section>
-				
+
 		<section id="talk">
 			<h2>讨论交流</h2>
 			<h3>Share thoughts, questions, &amp; bugs!</h3>
 			<p>Head on over to Tooltipster's issue tracker on GitHub: <a href="https://github.com/iamceege/tooltipster/issues">https://github.com/iamceege/tooltipster/issues</a></p>
 			<p>Before opening a new issue, please be sure to search through the backlog to see if your question or bug has been / is being resolved. Thank you! :)</p>
 		</section>
-		
+
 		<footer>
 			Developed and maintained by <a href="https://plus.google.com/116532683962309427991?rel=author" class="white">Caleb Jacob</a> and <a href="https://github.com/louisameline" class="white">Louis Ameline</a> under the <a href="http://opensource.org/licenses/MIT" class="white">MIT license</a>
 		</footer>
 	</div>
-	
+
 	<div id="fb-root"></div>
 <!--
 	<script type="text/javascript">
