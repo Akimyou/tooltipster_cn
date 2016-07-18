@@ -95,11 +95,11 @@
 					<img src="doc/images/browser-firefox.png" alt="FireFox" class="tooltip" title="支持FireFox" />
 				</li>
 				<li>
-					<img src="doc/images/browser-ie.png" alt="Internet Explorer" class="tooltip" title="支持IE10, IE9, &amp; IE8 + Graceful Degradation" />
+					<img src="doc/images/browser-ie.png" alt="Internet Explorer" class="tooltip" title="支持IE10, IE9, &amp; IE8 + 损失少量特性" />
 				</li>
 			</ul>
 			<div id="download">
-				<a href="https://github.com/iamceege/tooltipster/archive/3.3.0.zip" class="button alt">下载</a> <span style="padding-right: 0.5em;">&amp;</span> <a href="#demos" class="white">开始学习 &rsaquo;</a>
+				<a href="https://github.com/iamceege/tooltipster/archive/3.3.0.zip" class="button alt">下载（3.3.0）</a> <span style="padding-right: 0.5em;">&amp;</span> <a href="#demos" class="white">开始学习 &rsaquo;</a>
 			</div>
 		</section>
 
@@ -460,49 +460,49 @@ $('.tooltip').tooltipster({
 			<h2>高级用法</h2>
 
 			<a name="api"></a>
-			<h3>The awesomesauce Tooltipster API</h3>
-			<p>The Tooltipster API was created to be as flexible and easy to use as possible (thanks to <a href="https://github.com/glebtv">glebtv</a> for the inspiration). The API allows you to create custom triggers, update tooltip content on the fly (whether the tooltip is currently open or not), destroy Tooltipster functionality if needed, and reposition tooltips for unique use cases.</p>
-			<p>Here is a quick look at all of the API methods:</p>
+			<h3>强大的Tooltipster API</h3>
+			<p>Tooltipster API的设计理念是：尽可能灵活、易于使用（感谢 <a href="https://github.com/glebtv">glebtv</a> 的启发）。借助API，你可以创建自定义触发器（trigger），动态更改工具提示的内容（无论该工具提示当前是否已开启），撤销Tooltipster增强效果（即：恢复为原生态的工具提示），以及更改工具提示的位置。</p>
+			<p>让我们来大致看一下所有API方法：</p>
 			<pre class="prettyprint">
-// set default options for all future tooltip instantiations
+// 为之后创建的所有工具提示设定默认配置
 $.fn.tooltipster('setDefaults', {
   position: 'bottom'
 });
 
-// show a tooltip (the 'callback' argument is optional)
+// 显示某个工具提示('callback'参数是可选的)
 $(...).tooltipster('show', callback);
 
-// hide a tooltip (the 'callback' argument is optional)
+// 隐藏某个工具提示('callback'参数是可选的)
 $(...).tooltipster('hide', callback);
 
-// temporarily disable a tooltip from being able to open
+// 临时禁用一个工具提示，使其无法被开启
 $(...).tooltipster('disable');
 
-// if a tooltip was disabled from opening, reenable its previous functionality
+// 如果一个工具提示被设为禁止开启，调用本方法能解除禁用
 $(...).tooltipster('enable');
 
-// hide and destroy tooltip functionality
+// 关闭工具提示，并撤销Tooltipster增强效果（即：恢复为原生态的工具提示）
 $(...).tooltipster('destroy');
 
-// return a tooltip's current content (if selector contains multiple origins, only the value of the first will be returned)
+// 获取某个工具提示的当前内容（如果jQuery选择器返回多个元素的话，本方法只返回第一个元素的内容）
 $(...).tooltipster('content');
 
-// update tooltip content
+// 更改工具提示的内容
 $(...).tooltipster('content', myNewContent);
 
-// get the value of an option
+// 读取某个选项的值
 $(...).tooltipster('option', optionName);
 
-// set the value of an option (use at your own risk, we do not provide support for issues you may encounter when using this method)
+// 设置某个选项的值（该方法存在风险。对于因调用该方法而引发的问题，我们不提供支持。）
 $(...).tooltipster('option', optionName, optionValue);
 
-// reposition and resize the tooltip
+// 调整工具提示的位置和大小
 $(...).tooltipster('reposition');
 
-// return the HTML root element of the tooltip
+// 获取某个工具提示的HTML根元素
 $(...).tooltipster('elementTooltip');
 
-// return the HTML root element of the icon if there is one, 'undefined' otherwise
+// 获取某个工具提示图标的HTML根元素。如果不存在图标的话，返回'undefined'
 $(...).tooltipster('elementIcon');</pre>
 
 			<a name="ajax"></a>
