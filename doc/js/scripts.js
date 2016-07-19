@@ -33,11 +33,11 @@
 					function(feeds){
 						var content = '';
 						if(!feeds){
-							content = 'Woops - there was an error retrieving my last.fm RSS feed';
+							content = '哎呀 - 解析来自 last.fm 上的RSS Feed时，出错了';
 							origin.tooltipster('content', content);
 						}
 						else {
-							content = $('<span>I last listened to: <strong>' + feeds.entries[0].title + '</strong></span>');
+							content = $('<span>(通过AJAX加载以下内容：)<br/><br/>作者最近听过的歌： <strong>' + feeds.entries[0].title + '</strong></span>');
 							origin
 								.tooltipster('content', content)
 								.data('ajax', 'cached');
