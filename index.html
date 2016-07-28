@@ -4,16 +4,16 @@
 	<title>Tooltipster 3 中文网 - 用于美化工具提示的jQuery插件</title>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-	<meta name="description" content="Tooltipster is a powerful, flexible jQuery plugin enabling you to easily create clean, HTML5 validated tooltips." />
+	<meta name="description" content="Tooltipster是一个灵活又强大jQuery插件，能够帮助您轻松创建时尚前卫的HTML5工具提示(Tooltip)。" />
 	<meta property="og:title" content="Tooltipster" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="index.html" />
 	<meta property="og:image" content="images/social.jpg" />
-	<meta property="og:site_name" content="Tooltipster - The jQuery Tooltip Plugin" />
-	<meta property="og:description" content="Tooltipster is a powerful, flexible jQuery plugin enabling you to easily create clean, HTML5 validated tooltips." />
+	<meta property="og:site_name" content="Tooltipster 3 中文网 - 用于美化工具提示的jQuery插件" />
+	<meta property="og:description" content="Tooltipster是一个灵活又强大jQuery插件，能够帮助您轻松创建时尚前卫的HTML5工具提示(Tooltip)。" />
 	<html itemscope itemtype="http://schema.org/CreativeWork">
-	<meta itemprop="name" content="Tooltipster - The jQuery Tooltip Plugin">
-	<meta itemprop="description" content="Tooltipster is a powerful, flexible jQuery plugin enabling you to easily create clean, HTML5 validated tooltips.">
+	<meta itemprop="name" content="Tooltipster 3 中文网 - 用于美化工具提示的jQuery插件">
+	<meta itemprop="description" content="Tooltipster是一个灵活又强大jQuery插件，能够帮助您轻松创建时尚前卫的HTML5工具提示(Tooltip)。">
 	<meta itemprop="image" content="images/social.jpg">
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="image_src" href="images/social.jpg" / >
@@ -506,51 +506,53 @@ $(...).tooltipster('elementTooltip');
 $(...).tooltipster('elementIcon');</pre>
 
 			<a name="ajax"></a>
-			<h3>使用AJAX来更新工具提示的内容</h3>
-			<p>Tooltipster gives you the ability to fire a custom synchronous or asynchronous function everytime before the tooltip launches (<a href="#functionBeforeExample">functionBefore</a>) or just once upon instantiation (<a href="#functionInitExample">functionInit</a>). One great use for this is to grab dynamic content for your tooltips via AJAX.</p>
-			<p id="functionBeforeExample">Here is an example of using functionBefore() asynchronously to replace a loading notification with our AJAX call. Once the content has been retrieved and updated, we'll take advantage of setting $.data() to keep our content cached for the next time the tooltip is opened:</p>
+			<h3>配合AJAX，以动态加载和更新工具提示的内容</h3>
+			<p>Tooltipster能在工具提示每次打开前 (<a href="#functionBeforeExample">functionBefore</a>) 或实例化 (<a href="#functionInitExample">functionInit</a>)时，自动调用一个同步或异步的函数。该特性有一个相当实用之处：用于配合AJAX来动态加载和更新工具提示的内容。</p>
+			<p id="functionBeforeExample"><strong>functionBefore示例：</strong><br/>
+				以下是一个在functionBefore()中异步调用AJAX的例子。在本例中，用从AJAX获取的内容来替换初始的提示文字“正在加载中”。当AJAX成功获取到内容后，使用jQuery的$.data()方法，将状态属性’ajax’标记为“cached(已缓存)”。这样，在下次打开工具提示时，就可以直接显示上次缓存的内容，而不必再次调用AJAX来获取内容。</p>
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
-    content: 'Loading...',
+    content: '正在加载中...',
     functionBefore: function(origin, continueTooltip) {
+        //本匿名函数是异步的，使得AJAX正在获取数据的同时，工具提示能弹出来并显示“正在加载中…”（注：根据文档，functionBefore函数返回后，工具提示才能弹出）
 
-        // we'll make this function asynchronous and allow the tooltip to go ahead and show the loading notification while fetching our data
         continueTooltip();
 
-        // next, we want to check if our data has already been cached
+        //检测内容是否已缓存（若已经缓存，则无需重新获取）
         if (origin.data('ajax') !== 'cached') {
             $.ajax({
                 type: 'POST',
                 url: 'example.php',
                 success: function(data) {
-                    // update our tooltip content with our returned data and cache it
+                    //用通过AJAX获得的内容来替换原有内容，并把状态标记为“cached(已缓存)”
                     origin.tooltipster('content', data).data('ajax', 'cached');
                 }
             });
         }
     }
 });</pre>
-			<p id="functionInitExample">However, maybe you just need to make one call and only need it to fire once instead of everytime the tooltip opens. This is where you could use functionInit(). This function will fire only once - right at the beginning of the instantiation process. You'll have the ability to do things like check the current content and set new content. Since the fancy API methods for returning and setting the value aren't instantiated yet, the way we go about this is a little different than functionBefore():
+			<p id="functionInitExample"><strong>functionInit示例：</strong><br/>
+				然而，或许你只需要调用一次自定义函数。此时应使用functionInit()。该函数只在开始实例化时被调用一次。在下面的例子中，该函数用于检查工具提示的当前内容并更新内容。由于此时读取和设置值的API还未初始化，本例中的处理方法与functionBefore()的例子略有不同。
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
     functionInit: function(origin, content) {
 
         if (content === 'This is bad content') {
 
-            // when the request has finished loading, we will change the tooltip's content
+            // 当AJAX请求加载完成时，更改工具提示的内容
             $.ajax({
                 type: 'POST',
                 url: 'example.php',
                 success: function(data) {
-                    origin.tooltipster('content', 'New content has been loaded : ' + data);
+                    origin.tooltipster('content', '已成功加载新内容 : ' + data);
                 }
             });
 
-            // this returned string will overwrite the content of the tooltip for the time being
-            return 'Wait while we load new content...';
+            // 函数返回值将覆盖工具提示的原有内容
+            return '正在加载新内容，请稍候...';
         }
         else {
-            // return nothing : the initialization continues normally with its content unchanged.
+            // 函数不返回任何内容。因此，工具提示的内容不会改变，初始化过程正常继续执行。
         }
     }
 });</pre>

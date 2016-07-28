@@ -3,7 +3,7 @@
 * 项目管理 , 网站维护
 
 ##cswef , <https://github.com/cswef>
-* header , welcome , demos区域的汉化与审核
+* header , welcome , demos区域的汉化与审核，Advanced部分
 
 ##包涵，兰凤英 ,<https://github.com/LeaveATrace>
 * getting-started，区域的汉化与审核
