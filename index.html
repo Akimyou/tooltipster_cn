@@ -15,7 +15,7 @@
 	<meta itemprop="name" content="Tooltipster 3 中文网 - 用于美化工具提示的jQuery插件">
 	<meta itemprop="description" content="Tooltipster是一个灵活又强大jQuery插件，能够帮助您轻松创建时尚前卫的HTML5工具提示(Tooltip)。">
 	<meta itemprop="image" content="images/social.jpg">
-	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<link rel="icon" type="image/png" href="doc/images/favicon.png" />
 	<link rel="image_src" href="images/social.jpg" / >
 
 	<link rel="stylesheet" type="text/css" href="doc/css/reset.css" />
@@ -33,6 +33,17 @@
 	<script type="text/javascript" src="doc/js/lang-css.js"></script>
 	<script type="text/javascript" src="doc/js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery.tooltipster.js"></script>
+
+	<!--百度统计-异步加载_Baidu Statistics-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?8f305a6f6189c2c7dac305970e8cee45";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 
 	<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -139,7 +150,7 @@
 
 		<section id="getting-started">
 			<h2>入门</h2>
-			<h3>1. 加载jQuery并且包含Tooltipster的插件文件</h3>
+			<h3>1. 加载jQuery，并加入Tooltipster的插件文件</h3>
 			<p>当你<a href="https://github.com/iamceege/tooltipster/archive/3.3.0.zip">下载Tooltipster</a>之后, 把tooltipster.css和 jquery.tooltipster.min.js移动到你根目录（项目目录）下的CSS目录和JavaScript的目录。接下来，加载jQuery并且包含Tooltipster的CSS和JavaScript文件在相应的标签里面：</p>
 <pre class="prettyprint">
 &lt;head&#62;
@@ -153,7 +164,7 @@
 ...
 &lt;/head&#62;
 </pre>
-			<h3>2. 建立你的HTML结构</h3>
+			<h3>2. 编辑HTML元素的属性</h3>
 			<p>为了让Tooltipster工作，我们首先为需要显示tooltip的标签添加<strong>.tooltip</strong>类（也可以是其他类名或者其他可以用来选择元素的方法）。接下来，我们通过（标签的）<strong>title</strong>属性来设置tooltip的内容。以下是一些例子：</p>
 			<h4>为一张图片添加一个tooltip（气泡悬浮框）：</h4>
 			<pre class="prettyprint">
@@ -182,7 +193,15 @@
 &lt;/head&#62;</pre>
 
 			<h3><a name="further">4. 更进一步</a></h3>
-			<h4>在你的tooltip（气泡悬浮框）中使用HTML</h4>
+			<h4>目录</h4>
+			<ul>
+				<li><a href="#further_4.1_title">4.1 在Tooltip中嵌入HTML代码</a></li>
+				<li><a href="#further_4.2_title">4.2 自定义Tooltipster的样式</a></li>
+				<li><a href="#further_4.3_title">4.3 自定义Tooltipster的功能</a></li>
+			</ul>
+			<br/>
+			
+			<h4 id="further_4.1_title">4.1 在Tooltip中嵌入HTML代码</h4>
 			<p>Tooltipster允许你在tooltip（气泡悬浮框）中使用任何你能想到的HTML标记，这意味着说你可以插入图像和格式化文本标签。为了达到这个目的，推荐的方法（与上面的）有点不同：在脚本中通过jQuery对象来定义你的内容而不是（标签的）title属性:</p>
 			<pre class="prettyprint">
 &lt;head&#62;
@@ -228,7 +247,7 @@
 
 &lt;/body&#62;</pre>
 
-			<h4>定制你的Tooltipster的样式</h4>
+			<h4 id="further_4.2_title">4.2 自定义Tooltipster的样式</h4>
 			<p>通过编辑或是重写<strong>css/tooltipster.css</strong>文件，你可以轻松的改变Tooltipsters的样式。</p>
 			<p>Tooltipster有4个打包好的的主题可供选择。它们在本页的底部有演示。若要使用一个主题，只要在你的页面中引入对应的css文件（位于 css/themes文件夹）并在Tooltipster的设置中指定它的名字：</p>
 			<pre class="prettyprint">
@@ -253,7 +272,7 @@ $('.tooltip').tooltipster({
 	padding: 8px 10px;
 }</pre>
 
-			<h4>定制Tooltipster的功能</h4>
+			<h4 id="further_4.3_title">4.3 自定义Tooltipster的功能</h4>
 			<p>Tooltipster的选项为你提供了广泛的变量值，使你的tooltip（气泡悬浮框）达到你心仪的效果。想要了解更多的选项，请<a href="#options">阅读选项部分。</a>这边只是一点东西仅供参考：</p>
 			<pre class="prettyprint">
 $('.tooltip').tooltipster({
@@ -505,8 +524,18 @@ $(...).tooltipster('elementTooltip');
 // 获取某个工具提示图标的HTML根元素。如果不存在图标的话，返回'undefined'
 $(...).tooltipster('elementIcon');</pre>
 
+			<h2>使用案例</h2>
+			<ul>
+				<li><a href="#ajax">1.配合AJAX，动态加载和更新Tooltip的内容</a></li>
+				<li><a href="#apishow">2.手动显示、隐藏Tooltip</a></li>
+				<li><a href="#apicontent">3.更改Tooltip的内容</a></li>
+				<li><a href="#multiple">4.在单个元素上添加多个Tooltip</a></li>
+				<li><a href="#accessibility">5.为残障人士阅读Tooltip的内容提供便利</a></li>
+				<li><a href="#community">6.来自社区的使用案例</a></li>
+			</ul>
+
 			<a name="ajax"></a>
-			<h3>配合AJAX，以动态加载和更新工具提示的内容</h3>
+			<h3 id="ajax">1.配合AJAX，动态加载和更新Tooltip的内容</h3>
 			<p>Tooltipster能在工具提示每次打开前 (<a href="#functionBeforeExample">functionBefore</a>) 或实例化 (<a href="#functionInitExample">functionInit</a>)时，自动调用一个同步或异步的函数。该特性有一个相当实用之处：用于配合AJAX来动态加载和更新工具提示的内容。</p>
 			<p id="functionBeforeExample"><strong>functionBefore示例：</strong><br/>
 				以下是一个在functionBefore()中异步调用AJAX的例子。在本例中，用从AJAX获取的内容来替换初始的提示文字“正在加载中”。当AJAX成功获取到内容后，使用jQuery的$.data()方法，将状态属性’ajax’标记为“cached(已缓存)”。这样，在下次打开工具提示时，就可以直接显示上次缓存的内容，而不必再次调用AJAX来获取内容。</p>
@@ -558,7 +587,7 @@ $('.tooltip').tooltipster({
 });</pre>
 
 			<a name="apishow"></a>
-			<h3>手动显示、隐藏工具提示</h3>
+			<h3 id="apishow">2.手动显示、隐藏Tooltip</h3>
 			<p>By default and according to the 'trigger' option, Tooltipster automatically shows tooltips upon users' mouse clicks or mouse hovering (or their touch-gesture equivalents). In addition to this, you may also manually open or close a tooltip at anytime with a simple javascript command.</p>
 			<p>To achieve this, Tooltipster has the 'show' and 'hide' methods. Both of them may receive an optional 'callback' parameter, which represents a function you'd like to call when the tooltip is done animating.</p>
 			<p>Here's an example of how you could launch a specific tooltip on page load and close it when any key on your keyboard is pressed. This will still preserve the default hover trigger.</p>
@@ -599,61 +628,62 @@ $(document).ready(function() {
 </pre>
 
 			<a name="apicontent"></a>
-			<h3>更改工具提示的内容</h3>
+			<h3 id="apicontent">3.更改Tooltip的内容</h3>
 			<p>It's easy as pie to update a tooltip's content - whether it's open or closed. Depending on your selector, you can update multiple tooltips at once or just one:</p>
 			<pre class="prettyprint">
 $('#my-special-element').tooltipster('content', 'My new content');</pre>
 			<p>By default, Tooltipster will play a subtle animation when the content changes. To tweak the animation, check out the '.tooltipster-content-changing' class in your tooltipster.css file. It's important to note that only CSS transforms will be animated. To disable this animation, set updateAnimation to false.</p>
 
 			<a name="multiple"></a>
-			<h3>在单个元素上添加多个工具提示</h3>
-			<p>Several independant tooltips can be set on a single element, each one having its own triggers and options. Just set the 'multiple' option to true when you initialize your tooltip. This will only change two things that you might want to be aware of.</p>
-			<p>Firstly, the instantiation call will now return an array of Tooltipster objects generated by the call, instead of the tooltipped jQuery-wrapped elements.</p>
-			<p>Secondly, you will have to use the Tooltipster object of a tooltip to make any API method calls on it. All methods documented on this page remain available, only the way to call them changes.</p>
+			<h3 id="multiple">4.在单个元素上添加多个Tooltip</h3>
+			<p>单个HTML元素上可以添加多个工具提示。它们拥有各自的触发器(trigger)和属性,互不影响。要实现这个效果，只需在初始化工具提示时，把'multiple'选项设为true即可。该属性设为true，将带来2个变化：</p>
+			<p>第一，实例化方法的返回类型由“Tooltipster对象”变为“Tooltipster对象数组”。</p>
+			<p>第二，所有API仍然可用，但调用API的方法改变了。现在，必须通过Tooltipster对象（而不是jQuery选择器$(...)）来调用Tooltip的各个API方法。</p>
 
 			<pre class="prettyprint">
-// create a first tooltip as usual. The multiple option is actually optional for the first tooltip
+// 首先，与创建单个Tooltip的方法相同，在my-element元素上添加第一个Tooltip。第一个Tooltip可以不指定'multiple'选项。
 $('#my-element').tooltipster({
-	content: 'My first tooltip',
+	content: '第一个工具提示',
 	position: 'top'
 });
 
-// instantiate a second tooltip and keep the returned Tooltipster objects array for later use of the API
+// 然后，在my-element元素上创建第二个Tooltip，把返回的Tooltipster对象数组保存到变量中，以备后续使用。
 var tooltipsterObjects = $('#my-element').tooltipster({
-	// don't forget to provide content here as the 1st tooltip will have deleted the original title attribute of the element
-	content: 'My second tooltip',
+	// 注意区别：对于同一元素上创建的第二个工具提示，必须注明Tooltip的内容(content)。因为创建首个Tooltip时，已经自动移除了HTML元素的title属性，所以无法从title属性读取content。
+	content: '第二个工具提示',
 	multiple: true,
 	position: 'bottom'
 });
 
-// since the jQuery selector matches only one element, the array will contain only one Tooltipster object.
-// Otherwise the array would contain one object for each matched element, in the same order as them
+// 由于本例中jQuery选择器只返回一个HTML元素，所以数组中只包含一个Tooltipster对象。
+// （如果jQuery选择器返回了多个HTML元素，数组将包含多个与之对应的Tooltipster对象。数组中对象的顺序与HTML元素的顺序一致。）
 var tooltip2 = tooltipsterObjects[0];
 
-// use this Tooltipster object to make any API method call on the tooltip
+// 用这个Tooltipster对象来调用各个API方法
 tooltip2.content('New content for my second tooltip').show();
-// all documented methods can be called that way
+// 通过这种方式，可以调用本文档中的所有API
 var element = tooltip2.elementTooltip();
 
-// calling the API methods in the usual way only affects the first tooltip that was created on the element
+// -----------------------------------------------------------
+// 如果以普通的方式调用API，API只会作用于该元素的第一个Tooltip，其余的Tooltip不受影响。
 $('#my-element').tooltipster('content', 'New content for my first tooltip')
 </pre>
 
 <pre class="prettyprint">
-// You may use the 'multiple' option on the first tooltip as well, it will return an array of objects too
+// 在创建首个Tooltip时，也可以加上multiple:true。加上该属性后，方法会返回一个对象数组。
 var tooltipsterObjects = $('#my-element').tooltipster({
-	content: 'My first tooltip',
+	content: '第一个工具提示',
 	multiple: true
 });
 
-// this is also a way to call API methods on the first tooltip
+// 也可以用这种方法来在首个Tooltip上调用API：
 var tooltip1 = tooltipsterObjects[0];
 tooltip1.content('New content for my first tooltip').show();</pre>
 
-<p>Note : if you have multiple tooltips and destroy them, only the last destroyed tooltip will transfer its content back to the title attribute of the tooltipped element.</p>
+<p>注意：使用.tooltipster('destroy')方法销毁同一元素上的多个Tooltip时，只有最后一个被销毁的Tooltip的content(内容)会被回填到元素的title属性中。（把内容回填到元素的title属性中，是为了还原为“原生态的工具提示”）</p>
 
 			<a name="accessibility"></a>
-			<h3>为残障人士阅读工具提示的内容提供便利</h3>
+			<h3 id="accessibility">5.为残障人士阅读Tooltip的内容提供便利</h3>
 			<p>The W3C issued a recommendation to make websites more accessible to persons with disabilities. This recommendation is known as WAI-ARIA (or simply ARIA), which stands for Web Accessibility Initiative - Accessible Rich Internet Applications.</p>
 			<p>Accessible tooltips can be powered by Tooltipster. To do this, one solution is to actually manipulate in parallel two tooltips which will share the same content :<br />
 				- the ARIA tooltip, which is invisible on the screen but readable by ARIA-compatible software<br />
@@ -694,7 +724,7 @@ $('#myfield')
     });
 </pre>
 
-			<h3>来自社区的使用案例</h3>
+			<h3 id="community">6.来自社区的使用案例</h3>
 			<p><a href="http://stackoverflow.com/questions/14741688/how-to-display-messages-from-jquery-validate-plugin-inside-of-tooltipster-toolti">Using Tooltipster alongside jQuery Validate<br/>（如何使用 Tooltipster来显示jQuery Validate的错误信息？）</a> by <a href="https://github.com/sparky672">sparky672</a></p>
 			<p>Did you do something awesome with Tooltipster? <a href="#talk">Tell me</a> and I'll post it up here!</p>
 		</section>
