@@ -1,12 +1,12 @@
-Tooltipster
+Tooltipster中文文档
 ===========
 
-A jQuery tooltip plugin by Caleb Jacob under MIT license.  
-Compatible with Mozilla Firefox, Google Chrome, IE8+ and others. Requires jQuery 1.7+
+一个 jQuery 工具提示(Tooltip)插件，作者 Caleb Jacob，遵循MIT协议。  
+兼容 Mozilla Firefox, Google Chrome, IE8+ 及其他浏览器。 需要配合 jQuery 1.7+
 
-A reminder of options/methods lies below. For detailed documentation, visit http://mikuscallion.github.io/tooltipster_cn/
+以下是“选项”/“方法”速查列表。 详细说明参见Tooltipster中文文档： http://mikuscallion.github.io/tooltipster_cn/
 
-Options
+选项
 -------------------------
 
 animation  
@@ -47,7 +47,7 @@ touchDevices
 trigger  
 updateAnimation  
 
-Methods
+方法
 -------------------------
 
 $.fn.tooltipster('setDefaults', {})  
